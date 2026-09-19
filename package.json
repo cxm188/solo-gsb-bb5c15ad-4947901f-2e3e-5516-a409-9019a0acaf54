@@ -1,0 +1,27 @@
+{
+  "name": "swiss-pairing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "桌游联赛瑞士制配对 Web 应用",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 8080",
+    "start": "npm run build && npm run preview",
+    "test:solver": "esbuild src/solver/solver.test.ts --bundle --platform=node --format=esm | node",
+    "test:e2e": "esbuild src/lib/integration.test.ts --bundle --platform=node --format=esm | node",
+    "test": "npm run test:solver && npm run test:e2e"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}
